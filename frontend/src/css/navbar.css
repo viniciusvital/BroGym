@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk&display=swap');
+
+/* font-family: 'Anton', sans-serif;
+    font-family: 'Space Grotesk', sans-serif; */ */
+
+
 .nav {
-    background-color: black;
+    background-color: #0005;
+    display: flex;
+    width: 100vw;
+}
+
+.nav-logo {
+    font-family: 'Anton', sans-serif;
+    font-size: 2.5rem;
+    margin-left: 20px;
 }
