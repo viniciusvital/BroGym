@@ -57,11 +57,50 @@ namespace BroGymApi.Data
             }
             #endregion
 
+            #region seed_produtos
             if (!context.Produtos.Any())
             {
-                context.Produtos.Add(new Produto() { ProdutoId = 1, Nome = "Camisa com estampa dos deuses", Preco = 59.90, Foto = "1.webp", IsAtivo = 1, DataRegistro = dataAgora });
-                
+                string descCamisaDosDeuses = @"Camisa dos deuses!!!";
+
+                string descBarraProteina = @"Todas as barras de proteína naturais que você pode comprar em um pedido mensal simples e recorrente.<br/>
+                                            • 25g de proteína por porção<br/>
+                                            • Sem Soja e Sem Glúten<br/>
+                                            • Sem cores, adoçantes ou sabores artificiais<br/>
+                                            • Zero adição de açúcar";
+
+                string descCamisaPreta = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam posuere lorem feugiat volutpat finibus. Sed non tellus in ex aliquet pulvinar sit amet quis elit.<br/>
+                                            • 100% algodão orgânico<br/>
+                                            • Cor preta sem estampa";
+
+                string descCamisaBranca = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam posuere lorem feugiat volutpat finibus. Sed non tellus in ex aliquet pulvinar sit amet quis elit.<br/>
+                                            • 100% algodão orgânico<br/>
+                                            • Cor branca com estampa";
+
+                string descProteina = @"Todo pó de proteína natural que você pode comprar em um pedido mensal simples e recorrente.<br/>
+                                        • 25g de proteína por porção<br/>
+                                        • Alimentado com capim, não OGM<br/>
+                                        • Sou Livre e Sem Glúten<br/>
+                                        • Processamento a frio<br/>
+                                        • Sem cores, adoçantes ou sabores artificiais<br/>
+                                        • Zero adição de açúcar";
+
+                string descGarrafinha = @"Compre nosso pacote de variedades prensadas a frio.<br/>
+                                        • Vegano<br/>
+                                        • Sem glúten<br/>
+                                        • Sem adição de açúcar";
+
+                string descGiftCard = @"A compra deste cartão-presente digital cria um código exclusivo. O destinatário do cartão-presente pode inserir este código na finalização da compra para subtrair o valor do cartão-presente do total do pedido.<br/>
+                                        Este vale-presente nunca expira.";
+
+                context.Produtos.Add(new Produto() { ProdutoId = 1, Nome = "Camiseta com estampa dos deuses", Descricao = descCamisaDosDeuses, Preco = 89.90, Foto = "1.webp", IsAtivo = 1, DataRegistro = dataAgora });
+                context.Produtos.Add(new Produto() { ProdutoId = 2, Nome = "Barra de proteína", Descricao = descBarraProteina, Preco = 2.90, Foto = "2.webp", IsAtivo = 1, DataRegistro = dataAgora });
+                context.Produtos.Add(new Produto() { ProdutoId = 3, Nome = "Camiseta preta sem estampa", Descricao = descCamisaPreta, Preco = 24.90, Foto = "3.webp", IsAtivo = 1, DataRegistro = dataAgora });
+                context.Produtos.Add(new Produto() { ProdutoId = 4, Nome = "Camiseta branca com estampa", Descricao = descCamisaBranca, Preco = 24.90, Foto = "4.webp", IsAtivo = 1, DataRegistro = dataAgora });
+                context.Produtos.Add(new Produto() { ProdutoId = 5, Nome = "Proteína do soro do leite", Descricao = descProteina, Preco = 79.49, Foto = "5.webp", IsAtivo = 1, DataRegistro = dataAgora });
+                context.Produtos.Add(new Produto() { ProdutoId = 6, Nome = "Garrafinha com suco zika", Descricao = descGarrafinha, Preco = 25.00, Foto = "6.webp", IsAtivo = 1, DataRegistro = dataAgora });
+                context.Produtos.Add(new Produto() { ProdutoId = 7, Nome = "Gift card", Descricao = descGiftCard, Preco = 50.00, Foto = "7.webp", IsAtivo = 1, DataRegistro = dataAgora });
             }
+            #endregion
 
             context.SaveChanges();
         }
