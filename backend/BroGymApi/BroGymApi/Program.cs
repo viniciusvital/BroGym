@@ -16,7 +16,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new() { Title = "Spotify", Version = "v1" });
+    c.SwaggerDoc("v1", new() { Title = "BroGymApi", Version = "v1" });
 
     // https://stackoverflow.com/questions/43447688/setting-up-swagger-asp-net-core-using-the-authorization-headers-bearer
     var jwtSecurityScheme = new OpenApiSecurityScheme
@@ -121,7 +121,7 @@ using (var scope = app.Services.CreateScope())
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
-    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Spotify v1");
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "BromGymApi v1");
     c.DocExpansion(DocExpansion.None); // https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/279
     }
 );
