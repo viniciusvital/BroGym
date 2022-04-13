@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "7mqR1oJMJ2oy/bTrcAETQrXaLXYKQ6HEH1Tra5LJN/1SPWGIasWWbw9h/nGaBi+oW2xx1KUi3vyVNM75q0NTvg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\junior.souza\\Desktop\\BroGym\\backend\\BroGymApi\\Biblioteca\\Biblioteca.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\junior.souza\\.nuget\\packages\\timezoneconverter\\5.0.0\\timezoneconverter.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
