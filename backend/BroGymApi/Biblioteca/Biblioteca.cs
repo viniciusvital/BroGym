@@ -8,7 +8,7 @@ namespace Biblioteca
     {
         // Constantes
         public const string localApiOnline = "https://brogymapi.azurewebsites.net/";
-        public const string localApiLocalHost = "https://localhost:7225/";
+        public const string localApiLocalHost = "https://localhost:44383/";
 
         public const string localReactOnline = "https://brogym.vercel.app/";
         public const string localReactLocalHost = "http://localhost:3000/";
