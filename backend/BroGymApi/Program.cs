@@ -44,9 +44,9 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 // Inserir as informações do banco na variável builder antes de buildá-la;
-//var secretSenhaBancoDados = builder.Configuration["SecretSenhaBancoDados"]; // secrets.json;
+var secretSenhaBancoDados = builder.Configuration["SecretSenhaBancoDados"]; // secrets.json;
 string con = builder.Configuration.GetConnectionString("BDBroGym");
-//con = con.Replace("[secretSenhaBancoDados]", secretSenhaBancoDados); // Alterar pela senha do secrets.json;
+con = con.Replace("[secretSenhaBancoDados]", secretSenhaBancoDados); // Alterar pela senha do secrets.json;
 builder.Services.AddDbContext<Context>(options => options.UseMySql(con, ServerVersion.AutoDetect(con)));
 
 // Banco (injection) com o Pattern Design: https://www.c-sharpcorner.com/blogs/net-core-mvc-with-entity-framework-core-using-dependency-injection-and-repository
@@ -116,15 +116,15 @@ using (var scope = app.Services.CreateScope())
 }
 
 // Configure the HTTP request pipeline;
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "BromGymApi v1");
         c.DocExpansion(DocExpansion.None); // https://github.com/domaindrivendev/Swashbuckle.AspNetCore/issues/279
     });
-}
+//}
 
 // Cors;
 app.UseCors(x => x
@@ -148,10 +148,11 @@ if (app.Environment.IsDevelopment())
 }
 
 // Habilitar static files para exibir as imagens da API: https://youtu.be/jSO5KJLd5Qk?t=86;
-//IWebHostEnvironment env = app.Environment;
-//app.UseStaticFiles(new StaticFileOptions
-//{
-//    FileProvider = new PhysicalFileProvider(Path.Combine(env.ContentRootPath, "Upload")),
-//    RequestPath = "/Upload"
-//});
+IWebHostEnvironment env = app.Environment;
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(Path.Combine(env.ContentRootPath, "Upload")),
+    RequestPath = "/Upload"
+});
 
+app.Run();
