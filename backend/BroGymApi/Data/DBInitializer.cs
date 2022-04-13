@@ -57,9 +57,16 @@ namespace BroGymApi.Data
             }
             #endregion
 
-          
+            if (!context.Produtos.Any())
+            {
+                context.Produtos.Add(new Produto() { ProdutoId = 1, Nome = "Camisa com estampa dos deuses", Preco = 59.90, Foto = "1.webp", IsAtivo = 1, DataRegistro = dataAgora });
+                
+            }
+
             context.SaveChanges();
         }
     }
 }
+
+
 

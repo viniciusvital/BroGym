@@ -13,6 +13,7 @@ namespace BroGymApi.Data
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<UsuarioTipo> UsuariosTipos { get; set; }
         public DbSet<UsuarioInformacao> UsuariosInformacoes { get; set; }
+        public DbSet<Produto> Produtos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

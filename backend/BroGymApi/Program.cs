@@ -52,6 +52,7 @@ builder.Services.AddDbContext<Context>(options => options.UseMySql(con, ServerVe
 // Banco (injection) com o Pattern Design: https://www.c-sharpcorner.com/blogs/net-core-mvc-with-entity-framework-core-using-dependency-injection-and-repository
 // NOVOS REPOSITÓRIOS DEVEM SEMPRE SER ADICIONADOS AQUI;
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>();
 
 // Outros;
 builder.Services.AddMvc();
@@ -138,7 +139,7 @@ app.UseHealthChecks("/status");
 // Outros;
 app.UseHttpsRedirection();
 app.UseAuthentication();
-app.UseAuthorization();
+app.UseAuthorization(); 
 app.MapControllers();
 
 // Exibir erros;
