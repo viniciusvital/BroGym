@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Footer from './components/others/footer';
 import Navbar from './components/others/navbar';
 import './css/index.css';
+import './fonts/Anton.css';
 import Rota from './rota';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
